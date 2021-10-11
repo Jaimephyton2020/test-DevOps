@@ -1,0 +1,103 @@
+Mi repositorio GIT para DevOps y otros cursos
+
+GIT
+
+https://github.com/Jaimephyton2020/test-DevOps
+
+Para Clonar el repositorio a mi maquina local:
+
+git clone https://github.com/Jaimephyton2020/test-DevOps
+
+Desde la linea de comandos:
+
+ls  -> para ver los directorios actuales
+cd test-DevOps para mover al directorio que requiero
+
+Repositorio en mi maquina fisica:
+
+C:\Users\Jaime\test-DevOps
+
+////**** Pasos para probar mis comandos basicos GIT ******////
+
+1. Crearme un archivo con codigo en el repositorio local:
+hungry.py
+
+2.  Ejecutar el siguiente comando: 
+git add "nombre archivo" -> add mi archivo al staging area, desde esta area puedo realizar los commit
+git add hungry.py  
+
+3. Revisar el status, para identificar si hubo cambios
+git status (nuevos archivos/modificaciones se identifican)
+
+4. Realizar el commit
+git commit -m 'Cualquier mensaje que identifique los cambios realizados' -> add los cambios a la base local del control de versiones (en este caso GIT); pero aun no se han puesto los cambios en el servidor remoto Github
+git commit -m 'primera version del archivo hungry.py'
+
+5. Validar el status
+git status (ya no se ve el archivo nuevo)
+
+6. Validar el registro de lo que he realizado en el repositorio y sus archivos
+git log
+
+7. Colocar los cambios en el servidor remoto (Github)
+git push 
+
+8. Comando para validar versiones de los archivos/codigo
+git difftool HEAD -> muestra la diferencia entre los cambios locales y la version previa del archivo
+
+
+////****Ignore or Keep*****////
+Cuando quiero ignorar alguna carpeta o archivo debo crear un archivo llamado
+gitignore y dentro de este archivo nombrar la carpeta/archivo a ignorar
+
+Desde la linea de comandos puedo crear el archivo gitignore con el siguiente comando
+touch gitignore
+git *.(extension) -> ignora todos los archivos con una extension especifica
+
+////**** Git log ****////
+Git log command shows the list of commits in the current branch. You can use it in the following ways:
+
+git log -2 									-> displays the history of last two commits
+git log commit_id 							-> shows the history starting from commit_id
+git log filename 							-> displays the list of commits for the file
+git log --since='aaaa-mm-dd' 				-> despliega los logs desde la fecha indicada hasta la ultima
+git log --until='aaaa-mm-dd' 				-> despliega los logs desde la primera vez hasta la fecha indicada
+git log --since='2 weeks ago' 				-> despliega los logs de los commits realizados 2 semanas atras
+git log --author='Jaime'					-> despliega los logs de los commits realizados por Jaime
+git log commit_id..commit_id				-> despliega los commits desde el commit-id indicado hasta el siguiente indicado (excluye el primer commit_id indicado)
+git log --stat 								-> despliega el log con el detalle de las lineas agregadas y las eliminadas
+git log --format='short'					-> despliega el log en formato 'corto'
+git log --oneline --graph --all --decorate 	-> despliega los logs con los flags indicados
+
+Flags
+
+You can enhance the output of git log command using these optional flags:
+--oneline						: Fits the log output to a single line
+	git log --oneline -2 		->despliega los 2 ultimos commits en una sola linea
+--decorate						: Adds a symbolic pointer to the output
+--graph							: Gives a graphical representation to the log output
+--grep=<pattern>				: Filters the log output and displays the output which matches the specified pattern
+
+////**** Git show ****////
+git show commit_id 				-> despliega el detalle del commit_id
+git show --oneline HEAD~2..HEAD -> despliega un rango de commits, con el detalle de cada commit resuelto
+
+
+////**** Git diff ****////
+git diff HEAD~1 HEAD 					-> muestra la diferencia entre 2 commits
+diff --git a/sample.txt b/sample.txt 	-> The line displays the input file for git diff
+--- a/sample.txt +++ b/sample.txt		-> The changes from a/sample.txt are marked with --- and changes from b/sample.txt are marked with +++ symbol.
+
+git diff --staged						-> cuando hago el add de cualquier al area de staging, no veo los cambios en el archivo porque no he realizado el commit, si quiero ver los cambios utilizo el -- staged antes de hacer el commit. Despues de hacer el commit y ejecuto el mismo comando ya no me mostrara los cambios
+
+
+////****Cheat Sheet****////
+git log -p									: Prints full details of each commit
+git log --grep-reflog=<pattern>				: Shows the list of commits when commit message matches regular expression pattern
+git log --follow ./path/to/filename			: Shows the history for the current file
+git shows									: Outputs content changes of the specified commit
+git diff --color-words						: Output has only the color-coded words that have changed
+git diff –staged							: Shows the file differences between staging and the last committed version
+git diff .path/to/filename					: Shows changes in a file compared to the previous commit
+
+
