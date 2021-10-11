@@ -1,3 +1,3 @@
 # test-DevOps
 
-Test repo for git commands demonstration
+Repositorio de Pruebas para Curso de DevOps y otros
