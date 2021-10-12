@@ -4,6 +4,7 @@ GIT
 
 https://github.com/Jaimephyton2020/test-DevOps
 
+////**** Git Clone ****////
 Para Clonar el repositorio a mi maquina local:
 
 git clone https://github.com/Jaimephyton2020/test-DevOps
@@ -101,3 +102,52 @@ git diff –staged							: Shows the file differences between staging and the la
 git diff .path/to/filename					: Shows changes in a file compared to the previous commit
 
 
+////**** Git Pull ****////
+
+git pull									-> is the convenient shortcut key to fetch and merge the content.
+git pull <remote_name> <branch_name>
+
+
+////**** Git Fetch ****////
+
+git fetch <remote_name> <branch_name>		-> downloads the remote content to your local repo, without changing your code changes.
+git fetch <remote_name> <branch_name>
+
+////**** Git Merge ****////
+
+git merge 									-> command merges the fetched remote content to the local working tree.
+git merge <remote_name>/<branch_name> 		-> merges the content to the specified branch.
+
+
+////**** Git Push ****////
+
+git push
+git push <remote_name> <branch_name>		-> To keep your changes and work in remote repo, you need to push the branch using the command
+	origin: will contain the remote URL
+	master: is the branch that is pushed (We shall discuss branches later in this course)
+
+////**** Git Remote ****////
+git remote add 								-> connect your local repo with an existing remote repo
+git remote add <remote_name> <remote_url>
+	<remote_name>: let us take default name origin
+	<remote_url>: let us take https_url https://github.com/play/repo.git
+
+Note: Your local repository can be linked to multiple remote repositories as git remote add origin1 <url>, git remote add origin2 <url>
+
+////**** Create new branch  ****////
+1. Create new branch from the master
+git branch <branch-name>
+
+2. Merge the feature branch with the master (or other branch where you want it to be). You can merge two branches locally or in remote.
+
+git checkout -b <branch-name>					-> Creating new branch 
+git push origin <branch-name>					-> Pushing branch from local to remote repo:
+Renaming branch:
+	git branch -m old-name new-name				-> Renaming local branch
+	git push origin :old-name new-name			-> Renaming remote branch 
+Deleting branch:
+	git branch -d <branch-name>					-> Deleting local branch 
+	git push origin -d <branch-name>			-> Deleting remote branch
+
+
+git diff master test 			-> To see the difference between two branches (master branch and test branch), you can execute the following command
