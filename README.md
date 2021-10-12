@@ -1,7 +1,7 @@
 Testing some git features
 
-Somebody has added a new line
+Somebody else has added a new line
 
 This is the new line we have added
 
-This is another line in my feature branch
+Nueva linea desde el feature branch
