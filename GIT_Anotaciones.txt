@@ -151,3 +151,21 @@ Deleting branch:
 
 
 git diff master test 			-> To see the difference between two branches (master branch and test branch), you can execute the following command
+
+
+////**** Cheat Sheet ****////
+git merge <branch>: Merges <branch> to current branch
+git rebase <base>: Rebases the current branch onto the base (branch name, commit ID, tag)
+git rebase -i <base>: Performs interactive rebase. Launches editor where you can specify command on each commit to transform it.
+git rebase --abort: Cancels rebasing and goes back to the previous commit
+git rebase --continue: Continues rebasing after resolving the rebase conflicts
+git pull --rebase: Fetches the remote copy and rebases it into the current branch of the local copy
+
+
+////**** Comandos que pueden cusar conflictos ****////
+git merge
+git rebase
+git cherry-pick
+git stash pop
+git pull
+
